@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Triangle } from './Triangle.mode';
+import { Triangle } from './Triangle.model';
 import { TriangleTypeForm } from './TriangleForm';
 import { TriangleTypeResult } from './TriangleTypeResult';
 
@@ -10,18 +10,16 @@ const TriangleTypePageLayout = styled.div`
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
 `
 
-export const TriangleType: React.FunctionComponent<{}> = props => {
-  const handleInputChange = (triangle: Triangle) => {
-    console.log(triangle)
-  }
+export const TriangleType: React.FunctionComponent = () => {
+  const [triangle, setTriangle] = React.useState<Partial<Triangle> | null>(null)
 
   return (
     <TriangleTypePageLayout>
-      <TriangleTypeForm onInputChange={handleInputChange} />
-      <TriangleTypeResult />
+      <TriangleTypeForm onChange={setTriangle} values={triangle} />
+      <TriangleTypeResult triangle={triangle} />
     </TriangleTypePageLayout>
   )
 }
