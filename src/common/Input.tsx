@@ -9,7 +9,7 @@ type HtmlInputProps = DetailedHTMLProps<
   HTMLInputElement
 >
 
-const Input: React.FunctionComponent<Props> = props => {
+export const Input: React.FunctionComponent<Props> = props => {
   const { label, ...inputProps } = props
 
   return (
@@ -21,5 +21,3 @@ const Input: React.FunctionComponent<Props> = props => {
     </fieldset>
   )
 }
-
-export default Input

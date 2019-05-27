@@ -1,9 +1,13 @@
 import React, { DetailedHTMLProps } from 'react'
 
-interface Props
-  extends DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement> {}
+interface Props extends HtmlFormProps {}
 
-const Form: React.FunctionComponent<Props> = props => {
+type HtmlFormProps = DetailedHTMLProps<
+  React.FormHTMLAttributes<HTMLFormElement>,
+  HTMLFormElement
+>
+
+export const Form: React.FunctionComponent<Props> = props => {
   const { children, ...restProps } = props
 
   return (
@@ -12,5 +16,3 @@ const Form: React.FunctionComponent<Props> = props => {
     </form>
   )
 }
-
-export default Form
