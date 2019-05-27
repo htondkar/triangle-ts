@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { DetailedHTMLProps } from 'react'
 
-interface Props {}
+interface Props extends DivProps {}
 
-export const Content: React.FunctionComponent<Props> = props => (
-  <section data-ts="MainContent">{props.children}</section>
+type DivProps = DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>
+
+export const Content: React.FunctionComponent<Props> = ({ children, ...rest }) => (
+  <div data-ts="Content" {...rest}>
+    {children}
+  </div>
 )

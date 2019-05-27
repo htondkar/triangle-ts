@@ -1,10 +1,17 @@
 import React from 'react'
-import TriangleType from './pages/TriangleType/TriangleType'
+import { TriangleType } from './pages/TriangleType/TriangleType'
+import { AppContainer } from './common/AppContainer'
+import { Main } from './common/Main'
+import { Content } from './common/Content'
 
-export default function App() {
+export function App() {
   return (
-    <div className="App">
-      <TriangleType />
-    </div>
+    <AppContainer>
+      <Main>
+        <Content>
+          <TriangleType />
+        </Content>
+      </Main>
+    </AppContainer>
   )
 }
