@@ -1,5 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-export default function TriangleTypeResult() {
-  return <div>REsults !</div>
+export const TriangleTypeResult = () => {
+  return <div style={{ background: 'white' }}>REsults !</div>
 }

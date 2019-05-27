@@ -1,8 +1,9 @@
-import React from 'react'
-import { TriangleType } from './pages/TriangleType/TriangleType'
-import { AppContainer } from './common/AppContainer'
-import { Main } from './common/Main'
-import { Content } from './common/Content'
+import React from 'react';
+
+import { AppContainer } from './common/AppContainer';
+import { Content } from './common/Content';
+import { Main } from './common/Main';
+import { TriangleType } from './pages/TriangleType/TriangleType';
 
 export function App() {
   return (

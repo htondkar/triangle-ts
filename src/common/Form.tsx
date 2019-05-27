@@ -1,5 +1,5 @@
-import React, { DetailedHTMLProps } from 'react'
-import styled from 'styled-components'
+import React, { DetailedHTMLProps } from 'react';
+import styled from 'styled-components';
 
 interface Props extends HtmlFormProps {}
 
@@ -12,4 +12,9 @@ export const Form: React.FunctionComponent<Props> = styled.form.attrs({
   'data-ts': 'Form',
 })`
   background: white;
+  margin: 0;
+
+  & > * {
+    padding-top: 0 !important;
+  }
 `
