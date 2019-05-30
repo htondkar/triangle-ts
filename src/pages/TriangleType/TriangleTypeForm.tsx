@@ -25,7 +25,7 @@ export const TriangleTypeForm: React.FunctionComponent<Props> = props => {
 
   return (
     <section>
-      <Title>Determine Type Of Your Traingle</Title>
+      <Title>Determine The Type Of Your Triangle</Title>
       <TriangleStyledForm>
         <Input
           name={TriangleSides.SIDE_ONE}
