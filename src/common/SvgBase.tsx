@@ -9,6 +9,6 @@ const Svg = styled.svg`
   height: auto;
 `
 
-export const TriangleSvg: React.FunctionComponent = props => {
+export const SvgBase: React.FunctionComponent = props => {
   return <Svg viewBox="-10 -10 110 110">{props.children}</Svg>
 }

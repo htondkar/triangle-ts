@@ -3,14 +3,14 @@ import React from 'react';
 import { AppContainer } from './common/AppContainer';
 import { Content } from './common/Content';
 import { Main } from './common/Main';
-import { TriangleType } from './pages/TriangleType/TriangleType';
+import { TriangleTypePage } from './pages/TriangleType/TriangleTypePage';
 
 export function App() {
   return (
     <AppContainer>
       <Main>
         <Content>
-          <TriangleType />
+          <TriangleTypePage />
         </Content>
       </Main>
     </AppContainer>

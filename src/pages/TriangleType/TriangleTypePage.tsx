@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Triangle } from './Triangle.model';
-import { TriangleTypeForm } from './TriangleForm';
+import { TriangleTypeForm } from './TriangleTypeForm';
 import { TriangleTypeResult } from './TriangleTypeResult';
 
 const TriangleTypePageLayout = styled.div`
@@ -13,7 +13,7 @@ const TriangleTypePageLayout = styled.div`
   grid-template-rows: auto auto;
 `
 
-export const TriangleType: React.FunctionComponent = () => {
+export const TriangleTypePage: React.FunctionComponent = () => {
   const [triangle, setTriangle] = React.useState<Partial<Triangle> | null>(null)
 
   return (
