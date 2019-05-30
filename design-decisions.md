@@ -4,9 +4,13 @@
 
 - Use of "styled-component". It's a css in js library and works very nicely with react. It provides component scoped styles which is very convenient compared to globally scoped css.
 
-* Using Joi for validation. It's a battle tested library for validation. writing validation logic by hand is repetitive pretty bug-prone. So this library was chosen to mitigate this issue.
+- Using Joi for validation. It's a battle tested library for validation. writing validation logic by hand is repetitive pretty bug-prone. So this library was chosen to mitigate this issue.
 
-* Use of create-react-app. It's currently the best option for scaffolding a react project. It's officially supported by facebook and meets all the needs of this project.
+- Use of create-react-app. It's currently the best option for scaffolding a react project. It's officially supported by facebook and meets all the needs of this project.
+
+- React hooks. It's the future of React. A useState hook is used in TriangleTypePage.
+
+- Enzyme for testing. It makes testing easier by providing higher level APIs compared to React testing utils. but for testing components that use React hooks we still need to resort to the official react testing utils.
 
 ## Codebase Structure:
 
