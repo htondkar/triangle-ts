@@ -4,6 +4,7 @@ import { EquilateralTriangle } from './components/EquilateralTriangle';
 import { IsoclinesTriangle } from './components/IsoclinesTriangle';
 import { ScaleneTriangle } from './components/ScaleneTriangle';
 import { TriangleTypeResultCard } from './components/TriangleTypeResultCard';
+import { TriangleTypeResultTitle } from './components/TriangleTypeResultTitle';
 import { Triangle, TriangleTypes } from './Triangle.model';
 import { determineTriangleType } from './TriangleType.utils';
 import { TriangleValidations } from './TriangleType.validations';
@@ -31,28 +32,22 @@ export const TriangleTypeResult: React.FunctionComponent<Props> = ({ triangle })
 const messages = {
   [TriangleTypes.Equilateral]: (
     <React.Fragment>
-      <span>
-        <strong>Equilateral</strong> Triangle!
-      </span>
+      <TriangleTypeResultTitle triangleType="Equilateral" extraText="Triangle!" />
       <EquilateralTriangle />
     </React.Fragment>
   ),
   [TriangleTypes.Isosceles]: (
     <React.Fragment>
-      <span>
-        <strong>Isosceles</strong> Triangle!
-      </span>
+      <TriangleTypeResultTitle triangleType="Isosceles" extraText="Triangle!" />
       <IsoclinesTriangle />
     </React.Fragment>
   ),
   [TriangleTypes.Scalene]: (
     <React.Fragment>
-      <span>
-        <strong>Scalene </strong> Triangle!
-      </span>
+      <TriangleTypeResultTitle triangleType="Scalene" extraText="Triangle!" />
       <ScaleneTriangle />
     </React.Fragment>
   ),
-  invalidInput: <strong>This is not a valid triangle!</strong>,
-  incompleteInput: <strong>Please fill all the fields</strong>,
+  invalidInput: <TriangleTypeResultTitle extraText="This is not a valid triangle!" />,
+  incompleteInput: <TriangleTypeResultTitle extraText="Please fill all the fields" />,
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TriangleTypePageLayout = styled.div`
+export const TriangleTypePageLayout = styled.section`
   padding: 2rem;
   display: grid;
   grid-gap: 1rem;
