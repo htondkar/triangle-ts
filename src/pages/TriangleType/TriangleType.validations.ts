@@ -7,6 +7,7 @@ export const TriangleValidations = {
     const { error } = Joi.validate(triangle, this.getTriangleValidationSchema())
     return error === null ? true : false
   },
+
   /**
    * @method passesTriangleInequalityTheoremTest is a litmus test to determine is it's
    * mathematically possible and valid to form a triangle with the input values. for mor info

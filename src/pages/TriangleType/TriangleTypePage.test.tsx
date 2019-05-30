@@ -18,10 +18,10 @@ describe('TriangleTypePage', () => {
     expect(wrapper.find(TriangleTypeResult)).toHaveLength(1)
   })
 
-  // because enzyme does not support React hooks, react testing utils is used instead.
   it('should show the result of entering value into the inputs', () => {
     const container = document.createElement('div')
 
+    // because enzyme does not support React hooks, react testing utils is used instead.
     act(() => {
       ReactDOM.render(<TriangleTypePage />, container)
     })
