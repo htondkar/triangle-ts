@@ -48,8 +48,8 @@ const messages = {
       <ScaleneTriangle />
     </React.Fragment>
   ),
-  invalidInput: <React.Fragment>This is not a valid triangle</React.Fragment>,
-  incompleteInput: <React.Fragment>Please fill all the fields</React.Fragment>,
+  invalidInput: <strong>This is not a valid triangle!</strong>,
+  incompleteInput: <strong>Please fill all the fields</strong>,
 }
 
 export const TriangleTypeResult: React.FunctionComponent<Props> = ({ triangle }) => {
