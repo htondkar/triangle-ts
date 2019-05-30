@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import { App } from './App';
 import { TradehshiftUi } from './types/tradeshift-ui';
 
+// define ts as a global variable
 declare var ts: TradehshiftUi
 
 function renderApp() {
