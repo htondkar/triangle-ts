@@ -1,9 +1,11 @@
-import '@tradeshift/tradeshift-ui/ts.css'
-import '@tradeshift/tradeshift-ui/ts.js'
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { App } from './App'
-import { TradehshiftUi } from './types/tradeshift-ui'
+import '@tradeshift/tradeshift-ui/ts.css';
+import '@tradeshift/tradeshift-ui/ts.js';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { App } from './App';
+import { TradehshiftUi } from './types/tradeshift-ui';
 
 declare var ts: TradehshiftUi
 
