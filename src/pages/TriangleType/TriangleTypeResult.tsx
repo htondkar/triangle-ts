@@ -1,10 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import { Card } from '../../common/Card';
 import { EquilateralTriangle } from './components/EquilateralTriangle';
 import { IsoclinesTriangle } from './components/IsoclinesTriangle';
 import { ScaleneTriangle } from './components/ScaleneTriangle';
+import { TriangleTypeResultCard } from './components/TriangleTypeResultCard';
 import { Triangle, TriangleTypes } from './Triangle.model';
 import { determineTriangleType } from './TriangleType.utils';
 import { TriangleValidations } from './TriangleType.validations';
@@ -13,15 +12,21 @@ interface Props {
   triangle: Partial<Triangle> | null
 }
 
-const ResultCard = styled(Card)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  height: 250px;
-  overflow: auto;
-`
+export const TriangleTypeResult: React.FunctionComponent<Props> = ({ triangle }) => {
+  if (triangle === null || !TriangleValidations.hasAllTheSides(triangle)) {
+    return <TriangleTypeResultCard>{messages.incompleteInput}</TriangleTypeResultCard>
+  }
+
+  if (!TriangleValidations.passesTriangleInequalityTheoremTest(triangle)) {
+    return <TriangleTypeResultCard>{messages.invalidInput}</TriangleTypeResultCard>
+  }
+
+  return (
+    <TriangleTypeResultCard>
+      {messages[determineTriangleType(triangle)]}
+    </TriangleTypeResultCard>
+  )
+}
 
 const messages = {
   [TriangleTypes.Equilateral]: (
@@ -50,16 +55,4 @@ const messages = {
   ),
   invalidInput: <strong>This is not a valid triangle!</strong>,
   incompleteInput: <strong>Please fill all the fields</strong>,
-}
-
-export const TriangleTypeResult: React.FunctionComponent<Props> = ({ triangle }) => {
-  if (triangle === null || !TriangleValidations.hasAllTheSides(triangle)) {
-    return <ResultCard>{messages.incompleteInput}</ResultCard>
-  }
-
-  if (!TriangleValidations.passesTriangleInequalityTheoremTest(triangle)) {
-    return <ResultCard>{messages.invalidInput}</ResultCard>
-  }
-
-  return <ResultCard>{messages[determineTriangleType(triangle)]}</ResultCard>
 }

@@ -1,27 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import { Form } from '../../common/Form';
 import { Input } from '../../common/Input';
+import { Title } from '../../common/Title';
+import { TriangleStyledForm } from './components/TriangleStyledForm';
 import { Triangle, TriangleSides } from './Triangle.model';
 
 interface Props {
   values: Partial<Triangle> | null
   onChange: (triangle: Partial<Triangle>) => void
 }
-
-const StyledForm = styled(Form)`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-`
-const Title = styled.h4`
-  font-weight: bold;
-  margin-bottom: 1rem;
-`
 
 export const TriangleTypeForm: React.FunctionComponent<Props> = props => {
   function createChangeHandlerFor(fieldName: TriangleSides) {
@@ -39,7 +26,7 @@ export const TriangleTypeForm: React.FunctionComponent<Props> = props => {
   return (
     <section>
       <Title>Determine Type Of Your Traingle</Title>
-      <StyledForm>
+      <TriangleStyledForm>
         <Input
           name={TriangleSides.SIDE_ONE}
           value={getValueFor(TriangleSides.SIDE_ONE)}
@@ -67,7 +54,7 @@ export const TriangleTypeForm: React.FunctionComponent<Props> = props => {
           placeholder="Length of Side 1"
           type="number"
         />
-      </StyledForm>
+      </TriangleStyledForm>
     </section>
   )
 }
